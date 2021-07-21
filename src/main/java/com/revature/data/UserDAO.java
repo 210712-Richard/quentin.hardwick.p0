@@ -19,12 +19,14 @@ public class UserDAO {  //Database Access Object: Accesses data from persistence
 		//Populate a few users at startup if users.dat file is empty:
 		if(users == null) {
 			users = new ArrayList<User>();
-			users.add(new User(users.size(), "Firsttime", "Flyer", "neverflownbefore@scared.com", LocalDate.of(2021, 07, 18)));
-			User ff = new User(users.size(), "Fancy", "Pants", "flyeveryday@money.com", LocalDate.of(1980, 01, 01), 0);
+			users.add(new User(users.size(), "Mr.", "Firsttime", "Flyer", "neverflownbefore@scared.com", LocalDate.of(2021, 07, 18)));
+			User ff = new User(users.size(), "Dr.", "Fancy", "Pants", "flyeveryday@money.com", LocalDate.of(1980, 01, 01));
 			ff.setType(UserType.FREQUENT_FLYER);
 			ff.setMiles(2000l);
+			
 			users.add(ff);
-			User agent = new User(users.size(), "Quentin", "Hardwick", "quentin.hardwick@revature.net", LocalDate.of(1984, 02, 8));
+			
+			User agent = new User(users.size(), "Mr.", "Quentin", "Hardwick", "quentin.hardwick@revature.net", LocalDate.of(1984, 02, 8));
 			agent.setType(UserType.TICKET_AGENT);
 			users.add(agent);
 			ds.writeObjectsToFile(users, filename);
@@ -32,14 +34,18 @@ public class UserDAO {  //Database Access Object: Accesses data from persistence
 		}
 	}
 	
+	
 	public void addUser (User u) {
-		
+		users.add(u);
+		u.setFFID(users.size());
 	}
 	
 	public User getUser(String fname, String lname, String email) {
 		
 		for (User u : users) {
 			if (u.getFname().equals(fname) && u.getLname().equals(lname) && u.getEmail().equals(email)) {
+				System.out.println("======================================");
+				System.out.println(users);
 				return u;
 			}
 		}
@@ -49,7 +55,7 @@ public class UserDAO {  //Database Access Object: Accesses data from persistence
 public User getUser(String fname, String lname, Integer ff) {
 		
 		for (User u : users) {
-			if (u.getFname().equals(fname) && u.getLname().equals(lname) && u.getFF().equals(ff)) {
+			if (u.getFname().equals(fname) && u.getLname().equals(lname) && u.getFFID().equals(ff)) {
 				return u;
 			}
 		}

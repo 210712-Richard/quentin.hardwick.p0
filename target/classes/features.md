@@ -3,7 +3,7 @@
 
 ## User Stories
 
-* As a passenger, I can get in line.
+* As a passenger, I can get in check in.
 * As a passenger, I can create a reservation.
 * As a passenger, I can purchase a ticket
 * As a passenger, I can check in for my flight

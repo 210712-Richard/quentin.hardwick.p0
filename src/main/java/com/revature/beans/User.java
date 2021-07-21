@@ -2,44 +2,36 @@ package com.revature.beans;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.List;
-
 
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L; //Serializable demand this. Never used
 	
-	private Integer userid;
 	private String fname;
 	private String lname;
 	private String email;
 	private LocalDate bday;
 	private UserType type;
-	private Integer ff;
-	private Long miles;
-	private static int ffnumber;
+	private Integer ffid;
+	private Long miles = 0l;
+	private String title;
+	private String reservation;
 	
 	public User() {
 		super();
 		this.type = UserType.PASSENGER;
+		this.miles = 0l;
+		this.title = "";
 	}
 	                                                    
-	public User(Integer userid, String fname, String lname, String email, LocalDate bday) {
+	public User(Integer ffid, String title, String fname, String lname, String email, LocalDate bday) {
 		this();
-		this.userid = userid;
+		this.ffid = ffid;
+		this.title = title;
 		this.fname = fname;
 		this.lname = lname;
 		this.email = email;
 		this.bday = bday;
-	}
-	
-	public User(Integer userid, String fname, String lname, String email, LocalDate bday, Integer ff) {
-		this();
-		this.userid = userid;
-		this.fname = fname;
-		this.lname = lname;
-		this.email = email;
-		this.bday = bday;
-		this.ff = ff;
+		this.miles = 0l;
 	}
 	
 //**********************   Getters and Setters   *******************************
@@ -84,12 +76,12 @@ public class User implements Serializable {
 		this.type = type;
 	}
 
-	public Integer getFF() {
-		return ff;
+	public Integer getFFID() {
+		return ffid;
 	}
 
-	public void setFF(Integer ff) {
-		this.ff = ff;
+	public void setFFID(Integer ffid) {
+		this.ffid = ffid;
 	}
 
 	public Long getMiles() {
@@ -100,24 +92,34 @@ public class User implements Serializable {
 		this.miles = miles;
 	}
 
-	public static int getFfnumber() {
-		return ffnumber;
+	public String getTitle() {
+		return title;
 	}
 
-	public static void setFfnumber(int ffnumber) {
-		User.ffnumber = ffnumber;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-//*********************   Hash Code and Equals   *******************************
+
+	public String getReservation() {
+		return reservation;
+	}
+
+	public void setReservation(String reservation) {
+		this.reservation = reservation;
+	}
+//***********************   HashCode and toString   ****************************
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((bday == null) ? 0 : bday.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
-		result = prime * result + ((ff == null) ? 0 : ff.hashCode());
+		result = prime * result + ((ffid == null) ? 0 : ffid.hashCode());
 		result = prime * result + ((fname == null) ? 0 : fname.hashCode());
 		result = prime * result + ((lname == null) ? 0 : lname.hashCode());
 		result = prime * result + ((miles == null) ? 0 : miles.hashCode());
+		result = prime * result + ((reservation == null) ? 0 : reservation.hashCode());
+		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
@@ -141,10 +143,10 @@ public class User implements Serializable {
 				return false;
 		} else if (!email.equals(other.email))
 			return false;
-		if (ff == null) {
-			if (other.ff != null)
+		if (ffid == null) {
+			if (other.ffid != null)
 				return false;
-		} else if (!ff.equals(other.ff))
+		} else if (!ffid.equals(other.ffid))
 			return false;
 		if (fname == null) {
 			if (other.fname != null)
@@ -161,14 +163,25 @@ public class User implements Serializable {
 				return false;
 		} else if (!miles.equals(other.miles))
 			return false;
+		if (reservation == null) {
+			if (other.reservation != null)
+				return false;
+		} else if (!reservation.equals(other.reservation))
+			return false;
+		if (title == null) {
+			if (other.title != null)
+				return false;
+		} else if (!title.equals(other.title))
+			return false;
 		if (type != other.type)
 			return false;
 		return true;
 	}
-	//****************************   toString   ************************************
+
+		//****************************   toString   ************************************
 		@Override
 		public String toString() {
-			return "Name: " + lname + ", " + fname + "\nFrequent Flyer number: " + ff +
+			return "Title + " + title + "Name: " + lname + ", " + fname + "\nFrequent Flyer number: " + ffid +
 					"\nStatus: " + type + "\nMiles: " + miles + "\nDOB: " + bday + 
 					"\nEmail: " + email;
 		}

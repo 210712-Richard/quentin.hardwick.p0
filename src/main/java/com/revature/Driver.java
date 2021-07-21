@@ -1,10 +1,10 @@
 package com.revature;
 
-import com.revature.ticketing.Ticketing;
+import com.revature.menu.Menu;
 
 public class Driver {
 	public static void main(String[] args) {
-		Ticketing t = new Ticketing();
-		t.arrival();
+		Menu m = new Menu();
+		m.start();
 	}
 }
