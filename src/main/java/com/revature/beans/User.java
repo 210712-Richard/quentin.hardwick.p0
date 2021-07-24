@@ -12,7 +12,7 @@ public class User implements Serializable {
 	private LocalDate bday;
 	private UserType type;
 	private Integer ffid;
-	private Long miles = 0l;
+	private Long miles;
 	private String title;
 	private String reservation;
 	
@@ -21,6 +21,24 @@ public class User implements Serializable {
 		this.type = UserType.PASSENGER;
 		this.miles = 0l;
 		this.title = "";
+		this.bday = LocalDate.of(1990, 01, 01);
+	}
+	
+	public User(String title, String fname, String lname, String email) {
+		this();
+		this.title = title;
+		this.fname = fname;
+		this.lname = lname;
+		this.email = email;
+	}
+	
+	public User(String title, String fname, String lname, String email, LocalDate bday) {
+		this();
+		this.title = title;
+		this.fname = fname;
+		this.lname = lname;
+		this.email = email;
+		this.bday = bday;
 	}
 	                                                    
 	public User(Integer ffid, String title, String fname, String lname, String email, LocalDate bday) {
@@ -31,12 +49,11 @@ public class User implements Serializable {
 		this.lname = lname;
 		this.email = email;
 		this.bday = bday;
-		this.miles = 0l;
 	}
 	
 //**********************   Getters and Setters   *******************************
 
-	public String getFname() {
+public String getFname() {
 		return fname;
 	}
 
@@ -76,11 +93,11 @@ public class User implements Serializable {
 		this.type = type;
 	}
 
-	public Integer getFFID() {
+	public Integer getFfid() {
 		return ffid;
 	}
 
-	public void setFFID(Integer ffid) {
+	public void setFfid(Integer ffid) {
 		this.ffid = ffid;
 	}
 
@@ -107,7 +124,8 @@ public class User implements Serializable {
 	public void setReservation(String reservation) {
 		this.reservation = reservation;
 	}
-//***********************   HashCode and toString   ****************************
+
+	//***********************   HashCode and toString   ****************************
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -181,7 +199,7 @@ public class User implements Serializable {
 		//****************************   toString   ************************************
 		@Override
 		public String toString() {
-			return "Title + " + title + "Name: " + lname + ", " + fname + "\nFrequent Flyer number: " + ffid +
+			return "" + title  + lname + ", " + fname + "\nFrequent Flyer number: " + ffid +
 					"\nStatus: " + type + "\nMiles: " + miles + "\nDOB: " + bday + 
 					"\nEmail: " + email;
 		}

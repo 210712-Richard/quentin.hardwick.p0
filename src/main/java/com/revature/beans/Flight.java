@@ -8,15 +8,16 @@ public class Flight implements Serializable {
 	private int mainCapacity = 48;
 	private int flightNumber;
 	private String destination;
-	private ArrayList<Seat> availableBusiness = new ArrayList<>();
-	private ArrayList<Seat> availableMain = new ArrayList<>();
+	private ArrayList<String> availableBusiness = new ArrayList<>();
+	private ArrayList<String> availableMain = new ArrayList<>();
 	private Long distance;
 	private String seatMap;
 	private String availability;
 	
 	public static void main(String[] args) {
-		Flight x = new Flight(2000, "EYW", 1000l);
+		Flight x = new Flight(2679, "EYW", 1000l);
 		System.out.println(x);
+		System.out.println(x.getAvailableBusiness());
 	}
 	
 	public Flight (Integer number, String destination, Long distance) {
@@ -27,7 +28,7 @@ public class Flight implements Serializable {
 		char[] business = {'A', 'C', 'D'};
 		for (int i = 1; i < 4; i++) {
 			for (int j = 0; j < 3; j++) {
-				Seat seat = new Seat(i, business[j]);
+				String seat = "" +i + business[j];
 				this.availableBusiness.add(seat);
 			}
 		}
@@ -35,14 +36,14 @@ public class Flight implements Serializable {
 		char[] main = {'A', 'C', 'D', 'F'};
 		for (int i = 4; i < 16; i++) {
 			for (int j = 0; j < 4; j++) {
-				Seat seat = new Seat(i, main[j]);
+				String seat = "" +i + main[j];
 				this.availableMain.add(seat);
 			}
 		}
 	}
 	
-	public Seat book(String seat) {
-		
+	public String book(String seat) {
+		return seat;
 	}
 //********************   Getters and Setters   *********************************
 	public int getBusinessCapacity() {
@@ -77,19 +78,19 @@ public class Flight implements Serializable {
 		this.destination = destination;
 	}
 
-	public ArrayList<Seat> getAvailableBusiness() {
+	public ArrayList<String> getAvailableBusiness() {
 		return availableBusiness;
 	}
 
-	public void setAvailableBusiness(ArrayList<Seat> availableBusiness) {
+	public void setAvailableBusiness(ArrayList<String> availableBusiness) {
 		this.availableBusiness = availableBusiness;
 	}
 
-	public ArrayList<Seat> getAvailableMain() {
+	public ArrayList<String> getAvailableMain() {
 		return availableMain;
 	}
 
-	public void setAvailableMain(ArrayList<Seat> availableMain) {
+	public void setAvailableMain(ArrayList<String> availableMain) {
 		this.availableMain = availableMain;
 	}
 
@@ -185,84 +186,5 @@ public class Flight implements Serializable {
 				+ "\t   " + businessCapacity + "\nMain  " + availableMain.size() + "\t"
 				+ (mainCapacity - availableMain.size())
 				+ "\t  " + mainCapacity;
-	}	
-	
-	
-	
-}
-//******************************************************************************
-//**********************   Seat Class   ****************************************
-class Seat {
-	private int row;
-	private char column;
-	private Boolean available = true;
-	
-	public Seat(Integer row, char column) {
-		super();
-		this.row = row;
-		this.column = column;
-	}
-//******************   Getters and Setters   ***********************************
-	public int getRow() {
-		return row;
-	}
-
-	public void setRow(int row) {
-		this.row = row;
-	}
-
-	public char getColumn() {
-		return column;
-	}
-
-	public void setColumn(char column) {
-		this.column = column;
-	}
-
-	public Boolean getAvailable() {
-		return available;
-	}
-
-	public void setAvailable(Boolean available) {
-		this.available = available;
-	}
-	
-//*******************   HashCode and Equals   **********************************
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((available == null) ? 0 : available.hashCode());
-		result = prime * result + column;
-		result = prime * result + row;
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Seat other = (Seat) obj;
-		if (available == null) {
-			if (other.available != null)
-				return false;
-		} else if (!available.equals(other.available))
-			return false;
-		if (column != other.column)
-			return false;
-		if (row != other.row)
-			return false;
-		return true;
-	}
-	@Override
-//************************   toString   ****************************************
-	public String toString() {
-		return "" + row + column;
-	}
-	
-	
-	
+	}		
 }

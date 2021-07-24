@@ -19,14 +19,14 @@ public class UserDAO {  //Database Access Object: Accesses data from persistence
 		//Populate a few users at startup if users.dat file is empty:
 		if(users == null) {
 			users = new ArrayList<User>();
-			users.add(new User(users.size(), "Mr.", "Firsttime", "Flyer", "neverflownbefore@scared.com", LocalDate.of(2021, 07, 18)));
-			User ff = new User(users.size(), "Dr.", "Fancy", "Pants", "flyeveryday@money.com", LocalDate.of(1980, 01, 01));
+			users.add(new User(users.size() + 1, "Mr.", "Firsttime", "Flyer", "neverflownbefore@scared.com", LocalDate.of(2021, 07, 18)));
+			User ff = new User(users.size() + 1, "Dr.", "Fancy", "Pants", "flyeveryday@money.com", LocalDate.of(1980, 01, 01));
 			ff.setType(UserType.FREQUENT_FLYER);
 			ff.setMiles(2000l);
 			
 			users.add(ff);
 			
-			User agent = new User(users.size(), "Mr.", "Quentin", "Hardwick", "quentin.hardwick@revature.net", LocalDate.of(1984, 02, 8));
+			User agent = new User(0, "Mr.", "Quentin", "Hardwick", "quentin.hardwick@revature.net", LocalDate.of(1984, 02, 8));
 			agent.setType(UserType.TICKET_AGENT);
 			users.add(agent);
 			ds.writeObjectsToFile(users, filename);
@@ -37,29 +37,21 @@ public class UserDAO {  //Database Access Object: Accesses data from persistence
 	
 	public void addUser (User u) {
 		users.add(u);
-		u.setFFID(users.size());
+		u.setFfid(users.size());
 	}
 	
-	public User getUser(String fname, String lname, String email) {
+	public User getUser(String email) {
 		
 		for (User u : users) {
-			if (u.getFname().equals(fname) && u.getLname().equals(lname) && u.getEmail().equals(email)) {
-				System.out.println("======================================");
-				System.out.println(users);
+			if (u.getEmail().equals(email) || u.getFfid().equals(Integer.parseInt(email))) {
 				return u;
 			}
 		}
 		return null;
 	}
 	
-public User getUser(String fname, String lname, Integer ff) {
-		
-		for (User u : users) {
-			if (u.getFname().equals(fname) && u.getLname().equals(lname) && u.getFFID().equals(ff)) {
-				return u;
-			}
-		}
-		return null;
+	public List<User> getUsers(){
+		return users;
 	}
 	
 	public void updateUser (User u) {
