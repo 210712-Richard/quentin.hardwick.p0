@@ -43,7 +43,7 @@ public class UserServiceTest {
 		String fname = "Test";
 		String lname = "Test";
 		String email = "test@test.test";
-		LocalDate bday = LocalDate.of(1900, 1, 1);
+		LocalDate bday = LocalDate.of(1990, 1, 1);
 		service.register(title, fname, lname, email, bday);
 		
 		// Mockito mock object allows us to receive paramaters from methods:
