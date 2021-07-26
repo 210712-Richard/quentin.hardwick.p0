@@ -195,13 +195,14 @@ public String getFname() {
 			return false;
 		return true;
 	}
+//****************************   toString   ************************************
+	@Override
+	public String toString() {
+		return "User [fname=" + fname + ", lname=" + lname + ", email=" + email + ", bday=" + bday + ", type=" + type
+				+ ", ffid=" + ffid + ", miles=" + miles + ", title=" + title + ", reservation=" + reservation + "]";
+	}
 
-		//****************************   toString   ************************************
-		@Override
-		public String toString() {
-			return "" + title  + lname + ", " + fname + "\nFrequent Flyer number: " + ffid +
-					"\nStatus: " + type + "\nMiles: " + miles + "\nDOB: " + bday + 
-					"\nEmail: " + email;
-		}
+		
+		
 	
 }

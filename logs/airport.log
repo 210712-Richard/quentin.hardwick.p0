@@ -1,2 +1,95 @@
 2021-07-23 23:53:04 TRACE UserController:16 - Login method called
 2021-07-23 23:53:04 DEBUG UserController:17 - 
+2021-07-24 12:57:36 TRACE UserController:16 - Login method called
+2021-07-24 12:57:36 DEBUG UserController:17 - 
+2021-07-24 13:00:17 TRACE UserController:16 - Login method called
+2021-07-24 13:00:17 DEBUG UserController:17 - email=neverflownbefore%40scared.com
+2021-07-24 13:06:44 TRACE UserController:16 - Login method called
+2021-07-24 13:06:44 DEBUG UserController:17 - email=neverflownbefore%40scared.com
+2021-07-24 13:06:44 DEBUG UserController:18 - neverflownbefore%40scared.com
+2021-07-24 13:09:20 TRACE UserController:16 - Login method called
+2021-07-24 13:09:20 DEBUG UserController:17 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 13:12:06 TRACE UserController:17 - Login method called
+2021-07-24 13:12:06 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 13:13:01 TRACE UserController:17 - Login method called
+2021-07-24 13:13:01 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 16:08:24 TRACE UserController:17 - Login method called
+2021-07-24 16:08:24 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 16:49:07 TRACE UserController:17 - Login method called
+2021-07-24 16:49:07 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 16:59:29 TRACE UserController:17 - Login method called
+2021-07-24 16:59:29 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 17:03:33 TRACE UserController:17 - Login method called
+2021-07-24 17:03:33 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 17:16:32 TRACE UserController:17 - Login method called
+2021-07-24 17:16:32 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 18:00:51 TRACE UserController:17 - Login method called
+2021-07-24 18:00:51 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 18:00:51 DEBUG UserController:20 - null, null
+Frequent Flyer number: null
+Status: PASSENGER
+Miles: 0
+DOB: 1990-01-01
+Email: neverflownbefore@scared.com
+2021-07-24 18:02:20 TRACE UserController:17 - Login method called
+2021-07-24 18:02:20 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 18:02:55 TRACE UserController:17 - Login method called
+2021-07-24 18:02:55 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 18:02:56 DEBUG UserController:20 - null, null
+Frequent Flyer number: null
+Status: PASSENGER
+Miles: 0
+DOB: 1990-01-01
+Email: neverflownbefore@scared.com
+2021-07-24 18:04:58 TRACE UserController:17 - Login method called
+2021-07-24 18:04:58 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 18:04:58 DEBUG UserController:20 - User [fname=null, lname=null, email=neverflownbefore@scared.com, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-24 18:07:26 TRACE UserController:17 - Login method called
+2021-07-24 18:07:26 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 18:07:27 DEBUG UserController:20 - User [fname=null, lname=null, email=neverflownbefore@scared.com, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-24 18:07:27 DEBUG UserController:22 - User [fname=Firsttime, lname=Flyer, email=neverflownbefore@scared.com, bday=2021-07-18, type=PASSENGER, ffid=1, miles=0, title=Mr., reservation=null]
+2021-07-24 18:15:28 TRACE UserController:17 - Login method called
+2021-07-24 18:15:28 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 18:15:28 DEBUG UserController:20 - User [fname=null, lname=null, email=neverflownbefore@scared.com, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-24 18:15:29 DEBUG UserController:22 - User [fname=Firsttime, lname=Flyer, email=neverflownbefore@scared.com, bday=2021-07-18, type=PASSENGER, ffid=1, miles=0, title=Mr., reservation=null]
+2021-07-24 18:26:57 TRACE UserController:17 - Login method called
+2021-07-24 18:26:57 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 18:26:57 DEBUG UserController:21 - User [fname=null, lname=null, email=neverflownbefore@scared.com, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-24 18:26:57 DEBUG UserController:25 - User [fname=Firsttime, lname=Flyer, email=neverflownbefore@scared.com, bday=2021-07-18, type=PASSENGER, ffid=1, miles=0, title=Mr., reservation=null]
+2021-07-24 18:27:35 TRACE UserController:17 - Login method called
+2021-07-24 18:27:35 DEBUG UserController:18 - {"email": "neverflownbefore@scared.co"}
+2021-07-24 18:27:35 DEBUG UserController:21 - User [fname=null, lname=null, email=neverflownbefore@scared.co, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-24 18:27:55 TRACE UserController:17 - Login method called
+2021-07-24 18:27:55 DEBUG UserController:18 - {"email": "neverflownbefore@scared.co"}
+2021-07-24 18:27:55 DEBUG UserController:21 - User [fname=null, lname=null, email=neverflownbefore@scared.co, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-24 18:29:42 TRACE UserController:17 - Login method called
+2021-07-24 18:29:42 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-24 18:29:42 DEBUG UserController:21 - User [fname=null, lname=null, email=neverflownbefore@scared.com, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-24 18:29:42 DEBUG UserController:25 - User [fname=Firsttime, lname=Flyer, email=neverflownbefore@scared.com, bday=2021-07-18, type=PASSENGER, ffid=1, miles=0, title=Mr., reservation=null]
+2021-07-25 11:09:29 TRACE UserController:17 - Login method called
+2021-07-25 11:09:29 DEBUG UserController:18 - {"email": "neverflownbefore@scared.co"}
+2021-07-25 11:09:29 DEBUG UserController:21 - User [fname=null, lname=null, email=neverflownbefore@scared.co, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-25 12:12:26 TRACE UserController:17 - Login method called
+2021-07-25 12:12:26 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-25 12:12:26 DEBUG UserController:21 - User [fname=null, lname=null, email=neverflownbefore@scared.com, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-25 12:12:26 DEBUG UserController:25 - User [fname=Firsttime, lname=Flyer, email=neverflownbefore@scared.com, bday=2021-07-18, type=PASSENGER, ffid=1, miles=0, title=Mr., reservation=null]
+2021-07-25 12:12:40 TRACE UserController:17 - Login method called
+2021-07-25 12:12:40 DEBUG UserController:18 - {"email": "neverflownbefore@scared.co"}
+2021-07-25 12:12:40 DEBUG UserController:21 - User [fname=null, lname=null, email=neverflownbefore@scared.co, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-25 12:12:40 DEBUG UserController:25 - null
+2021-07-25 12:13:09 TRACE UserController:17 - Login method called
+2021-07-25 12:13:09 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-25 12:13:09 DEBUG UserController:21 - User [fname=null, lname=null, email=neverflownbefore@scared.com, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-25 12:13:09 DEBUG UserController:25 - User [fname=Firsttime, lname=Flyer, email=neverflownbefore@scared.com, bday=2021-07-18, type=PASSENGER, ffid=1, miles=0, title=Mr., reservation=null]
+2021-07-25 16:06:10 TRACE UserController:17 - Login method called
+2021-07-25 16:06:10 DEBUG UserController:18 - {"email": "flyeveryday@money.com"}
+2021-07-25 16:06:11 DEBUG UserController:21 - User [fname=null, lname=null, email=flyeveryday@money.com, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-25 16:06:11 DEBUG UserController:25 - User [fname=Fancy, lname=Pants, email=flyeveryday@money.com, bday=1980-01-01, type=FREQUENT_FLYER, ffid=2, miles=2000, title=Dr., reservation=null]
+2021-07-25 16:07:53 TRACE UserController:17 - Login method called
+2021-07-25 16:07:53 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-25 16:07:53 DEBUG UserController:21 - User [fname=null, lname=null, email=neverflownbefore@scared.com, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-25 16:07:53 DEBUG UserController:25 - User [fname=Firsttime, lname=Flyer, email=neverflownbefore@scared.com, bday=2021-07-18, type=PASSENGER, ffid=1, miles=0, title=Mr., reservation=null]
+2021-07-25 16:34:05 TRACE UserController:17 - Login method called
+2021-07-25 16:34:05 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
+2021-07-25 16:34:05 DEBUG UserController:21 - User [fname=null, lname=null, email=neverflownbefore@scared.com, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-25 16:34:05 DEBUG UserController:25 - User [fname=Firsttime, lname=Flyer, email=neverflownbefore@scared.com, bday=2021-07-18, type=PASSENGER, ffid=1, miles=0, title=Mr., reservation=null]

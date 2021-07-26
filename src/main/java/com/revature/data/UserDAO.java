@@ -42,12 +42,16 @@ public class UserDAO {  //Database Access Object: Accesses data from persistence
 	
 	public User getUser(String email) {
 		
-		for (User u : users) {
-			if (u.getEmail().equals(email) || u.getFfid().equals(Integer.parseInt(email))) {
-				return u;
-			}
-		}
-		return null;
+	//	for (User u : users) {
+	//		if (u.getEmail().equals(email) || u.getFfid().equals(Integer.parseInt(email))) {
+	//			return u;
+	//		}
+	//	}
+	//	return null;
+		
+		return users.stream()
+				.filter((u)-> u.getEmail().equalsIgnoreCase(email))
+				.findFirst().orElse(null);
 	}
 	
 	public List<User> getUsers(){

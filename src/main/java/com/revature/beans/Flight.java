@@ -1,30 +1,27 @@
 package com.revature.beans;
 
 import java.io.Serializable;
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Flight implements Serializable {
 	private int businessCapacity = 9;
 	private int mainCapacity = 48;
-	private int flightNumber;
+	private Integer flightNumber;
 	private String destination;
 	private ArrayList<String> availableBusiness = new ArrayList<>();
 	private ArrayList<String> availableMain = new ArrayList<>();
 	private Long distance;
 	private String seatMap;
 	private String availability;
+	private LocalTime departureTime;
 	
-	public static void main(String[] args) {
-		Flight x = new Flight(2679, "EYW", 1000l);
-		System.out.println(x);
-		System.out.println(x.getAvailableBusiness());
-	}
-	
-	public Flight (Integer number, String destination, Long distance) {
+	public Flight (Integer number, String destination, Long distance, LocalTime departureTime) {
 		super();
 		this.flightNumber = number;
 		this.destination = destination;
 		this.distance = distance;
+		this.departureTime = departureTime;
 		char[] business = {'A', 'C', 'D'};
 		for (int i = 1; i < 4; i++) {
 			for (int j = 0; j < 3; j++) {
@@ -62,7 +59,7 @@ public class Flight implements Serializable {
 		this.mainCapacity = mainCapacity;
 	}
 
-	public int getFlightNumber() {
+	public Integer getFlightNumber() {
 		return flightNumber;
 	}
 
@@ -105,6 +102,14 @@ public class Flight implements Serializable {
 	public String getSeatMap() {
 		return seatMap;
 	}
+	
+	public LocalTime getDepartureTime() {
+		return departureTime;
+	}
+
+	public void setDepartureTime(LocalTime departureTime) {
+		this.departureTime = departureTime;
+	}
 
 	public String getAvailability() {
 		int business = this.availableBusiness.size();
@@ -112,8 +117,8 @@ public class Flight implements Serializable {
 		availability = "Business: " + business + "\nMain: " + main;
 		return availability;
 	}
-//************************   HashCode and Equals   *****************************
-	@Override
+//***********************   Hash Code and Equals   *****************************
+@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
@@ -121,6 +126,7 @@ public class Flight implements Serializable {
 		result = prime * result + ((availableBusiness == null) ? 0 : availableBusiness.hashCode());
 		result = prime * result + ((availableMain == null) ? 0 : availableMain.hashCode());
 		result = prime * result + businessCapacity;
+		result = prime * result + ((departureTime == null) ? 0 : departureTime.hashCode());
 		result = prime * result + ((destination == null) ? 0 : destination.hashCode());
 		result = prime * result + ((distance == null) ? 0 : distance.hashCode());
 		result = prime * result + flightNumber;
@@ -153,6 +159,11 @@ public class Flight implements Serializable {
 		} else if (!availableMain.equals(other.availableMain))
 			return false;
 		if (businessCapacity != other.businessCapacity)
+			return false;
+		if (departureTime == null) {
+			if (other.departureTime != null)
+				return false;
+		} else if (!departureTime.equals(other.departureTime))
 			return false;
 		if (destination == null) {
 			if (other.destination != null)
