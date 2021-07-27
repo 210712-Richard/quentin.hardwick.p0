@@ -3,8 +3,11 @@ package com.revature.beans;
 import java.io.Serializable;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Flight implements Serializable {
+	private static final long serialVersionUID = 1L;
+	
 	private int businessCapacity = 9;
 	private int mainCapacity = 48;
 	private Integer flightNumber;
@@ -15,6 +18,7 @@ public class Flight implements Serializable {
 	private String seatMap;
 	private String availability;
 	private LocalTime departureTime;
+	private ArrayList<User> passengers = new ArrayList<>();
 	
 	public Flight (Integer number, String destination, Long distance, LocalTime departureTime) {
 		super();
@@ -107,6 +111,18 @@ public class Flight implements Serializable {
 		return departureTime;
 	}
 
+	public ArrayList<User> getPassengers() {
+		return passengers;
+	}
+
+	public void setPassengers(ArrayList<User> passengers) {
+		this.passengers = passengers;
+	}
+
+	public void setFlightNumber(Integer flightNumber) {
+		this.flightNumber = flightNumber;
+	}
+
 	public void setDepartureTime(LocalTime departureTime) {
 		this.departureTime = departureTime;
 	}
@@ -116,6 +132,15 @@ public class Flight implements Serializable {
 		int main = this.availableMain.size();
 		availability = "Business: " + business + "\nMain: " + main;
 		return availability;
+	}
+	
+	public String checkInMain() {
+		if (this.getAvailableMain().size() < 1) {
+			return null;
+		}
+		Random random = new Random();
+		String seat = this.getAvailableMain().remove(random.nextInt(this.getAvailableMain().size()));
+		return seat;
 	}
 //***********************   Hash Code and Equals   *****************************
 @Override
@@ -189,7 +214,7 @@ public class Flight implements Serializable {
 //****************************   toString   ************************************
 	@Override
 	public String toString() {
-		return "\tFlt: PA" + flightNumber + "   Dest:" + destination
+		return "\tFlt: PA" + flightNumber + "   Dest:" + destination + "Dep: " + departureTime
 				+ "\n   -------------------------------"
 				+ "\n     Avail  | Booked  | Capacity"
 				+ "\n\nBus    " + availableBusiness.size() + "\t"

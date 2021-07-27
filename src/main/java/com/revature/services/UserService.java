@@ -1,12 +1,15 @@
 package com.revature.services;
 
 import java.time.LocalDate;
+import java.util.Random;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.revature.beans.AirportObject;
+import com.revature.beans.Flight;
 import com.revature.beans.User;
+import com.revature.data.FlightDAO;
 import com.revature.data.UserDAO;
 
 import jdk.internal.org.jline.utils.Log;
@@ -15,6 +18,7 @@ public class UserService {
 	
 	private Logger log = LogManager.getLogger(UserService.class);
 	public UserDAO ud = new UserDAO();
+	public FlightDAO fd = new FlightDAO();
 	
 	public User login(String email) {
 		User u = ud.getUser(email);
@@ -47,6 +51,19 @@ public class UserService {
 		log.debug(now);
 		log.debug(fifteenYearsAgo);
 		return bday.isBefore(fifteenYearsAgo);
+	}
+	
+	
+	public String checkInMain(Integer flightNumber) {
+		
+		Flight flight = fd.getFlight(flightNumber);
+		if (flight.getAvailableMain().size() < 1) {
+			return null;
+		}
+		Random random = new Random();
+		String seat = flight.getAvailableMain().remove(random.nextInt(flight.getAvailableMain().size()));
+		fd.writeToFile();
+		return seat;
 	}
 	
 	public void depart(User user) {

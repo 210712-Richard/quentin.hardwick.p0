@@ -6,15 +6,17 @@ import java.time.LocalDate;
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L; //Serializable demand this. Never used
 	
+	private String title;
 	private String fname;
 	private String lname;
 	private String email;
+	private Integer ffid;
 	private LocalDate bday;
 	private UserType type;
-	private Integer ffid;
 	private Long miles;
-	private String title;
-	private String reservation;
+	private Flight flight;
+	private String seat;
+	
 	
 	public User() {
 		super();
@@ -116,16 +118,23 @@ public String getFname() {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	public String getReservation() {
-		return reservation;
+public Flight getFlight() {
+		return flight;
 	}
 
-	public void setReservation(String reservation) {
-		this.reservation = reservation;
+	public void setFlight(Flight flight) {
+		this.flight = flight;
 	}
 
-	//***********************   HashCode and toString   ****************************
+	public String getSeat() {
+		return seat;
+	}
+
+	public void setSeat(String seat) {
+		this.seat = seat;
+	}
+
+	//*******************   HashCode and Equals   **********************************
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -133,10 +142,11 @@ public String getFname() {
 		result = prime * result + ((bday == null) ? 0 : bday.hashCode());
 		result = prime * result + ((email == null) ? 0 : email.hashCode());
 		result = prime * result + ((ffid == null) ? 0 : ffid.hashCode());
+		result = prime * result + ((flight == null) ? 0 : flight.hashCode());
 		result = prime * result + ((fname == null) ? 0 : fname.hashCode());
 		result = prime * result + ((lname == null) ? 0 : lname.hashCode());
 		result = prime * result + ((miles == null) ? 0 : miles.hashCode());
-		result = prime * result + ((reservation == null) ? 0 : reservation.hashCode());
+		result = prime * result + ((seat == null) ? 0 : seat.hashCode());
 		result = prime * result + ((title == null) ? 0 : title.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
@@ -166,6 +176,11 @@ public String getFname() {
 				return false;
 		} else if (!ffid.equals(other.ffid))
 			return false;
+		if (flight == null) {
+			if (other.flight != null)
+				return false;
+		} else if (!flight.equals(other.flight))
+			return false;
 		if (fname == null) {
 			if (other.fname != null)
 				return false;
@@ -181,10 +196,10 @@ public String getFname() {
 				return false;
 		} else if (!miles.equals(other.miles))
 			return false;
-		if (reservation == null) {
-			if (other.reservation != null)
+		if (seat == null) {
+			if (other.seat != null)
 				return false;
-		} else if (!reservation.equals(other.reservation))
+		} else if (!seat.equals(other.seat))
 			return false;
 		if (title == null) {
 			if (other.title != null)
@@ -195,14 +210,9 @@ public String getFname() {
 			return false;
 		return true;
 	}
-//****************************   toString   ************************************
-	@Override
-	public String toString() {
-		return "User [fname=" + fname + ", lname=" + lname + ", email=" + email + ", bday=" + bday + ", type=" + type
-				+ ", ffid=" + ffid + ", miles=" + miles + ", title=" + title + ", reservation=" + reservation + "]";
-	}
-
-		
-		
-	
+@Override
+public String toString() {
+	return "User [title=" + title + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", ffid=" + ffid
+			+ ", bday=" + bday + ", type=" + type + ", miles=" + miles + ", flight=" + flight + ", seat=" + seat + "]";
+}
 }

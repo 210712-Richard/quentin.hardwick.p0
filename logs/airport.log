@@ -93,3 +93,7 @@ Email: neverflownbefore@scared.com
 2021-07-25 16:34:05 DEBUG UserController:18 - {"email": "neverflownbefore@scared.com"}
 2021-07-25 16:34:05 DEBUG UserController:21 - User [fname=null, lname=null, email=neverflownbefore@scared.com, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
 2021-07-25 16:34:05 DEBUG UserController:25 - User [fname=Firsttime, lname=Flyer, email=neverflownbefore@scared.com, bday=2021-07-18, type=PASSENGER, ffid=1, miles=0, title=Mr., reservation=null]
+2021-07-26 18:06:49 TRACE UserController:29 - Login method called
+2021-07-26 18:06:49 DEBUG UserController:30 - {"email": "neverflownbefore@scared.com"}
+2021-07-26 18:06:49 DEBUG UserController:33 - User [fname=null, lname=null, email=neverflownbefore@scared.com, bday=1990-01-01, type=PASSENGER, ffid=null, miles=0, title=, reservation=null]
+2021-07-26 18:06:49 DEBUG UserController:37 - User [fname=Firsttime, lname=Flyer, email=neverflownbefore@scared.com, bday=2021-07-18, type=PASSENGER, ffid=1, miles=0, title=Mr., reservation=null]

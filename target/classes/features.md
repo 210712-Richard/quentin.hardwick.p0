@@ -3,11 +3,12 @@
 
 ## User Stories
 
-* As a passenger, I can get in check in.
-* As a passenger, I can create a reservation.
-* As a passenger, I can purchase a ticket
-* As a passenger, I can check in for my flight
-* As a passenger, I can check in luggage
+* **As a user I can register for an account**
+* **As a user I can get in log in.**
+* **As a user I can log out**
+* **As a user I can check my frequent flyer miles**
+* As a passenger I can check in for a flight
+* As a passenger I can earn frequent flyer miles
 * As a passenger, I can request a seat change
 * As a passenger, I can request a cabin upgrade
 * As a Frequent Flyer, I get priority check in

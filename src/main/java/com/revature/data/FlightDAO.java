@@ -9,7 +9,7 @@ import com.revature.beans.Flight;
 
 public class FlightDAO {
 	
-	private static String filename = "flight.dat";
+	private static String filename = "flights.dat";
 	private static List<Flight> flights;
 	
 	static {
@@ -34,6 +34,7 @@ public class FlightDAO {
 			flights.add(new Flight(2200, "ILG", 500l, LocalTime.of(04, 30)));
 			flights.add(new Flight(2201, "ILG", 500l, LocalTime.of(23, 30)));
 			
+			ds.writeObjectsToFile(flights, filename);
 		}
 	}
 	

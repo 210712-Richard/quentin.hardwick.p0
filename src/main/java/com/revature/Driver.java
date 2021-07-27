@@ -22,12 +22,19 @@ public class Driver {
 		// ("/users/:email/miles", uc::getMiles) => calls the UserController's getMiles() method
 		// using the specified :email as an argument
 		
+		//As a user I can register for an account
+		app.put("/users/:email", uc::register);
+		
 		// As a user I can log in
 		app.post("/users", uc::login);
 		
 		//As a user I can log out
 		app.delete("/users", uc::logout);
 		
-		app.get("users/:email/miles", uc::getMiles);
+		//As a user I check my freq flyer miles
+		app.get("/users/:email/miles", uc::getMiles);
+		
+		//As a user I can check in for a flight
+		app.get("users/:email/:flight", uc::checkinMain);
 	}
 }
